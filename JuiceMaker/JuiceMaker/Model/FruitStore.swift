@@ -15,6 +15,10 @@ class FruitStore {
         }
     }
     
+    func changeInventory(of fruit: Fruit, to amount: Int) {
+        self.inventoryList[fruit] = amount
+    }
+    
     func reduce(by amount: [Fruit: Int]) throws {
         try amount.forEach { (fruit: Fruit, amount: Int) in
             if !hasEnoughInventory(of: fruit, to: amount) {
